@@ -124,7 +124,7 @@ def signup(request):
 
         myuser.save()
         messages.success(request, "Your Account has been successfully created")
-        return redirect('/signin')
+        return redirect('/login')
     return render(request, "lwlife/signup.html")
 
 
