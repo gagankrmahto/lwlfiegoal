@@ -100,6 +100,7 @@ def custom_form(request):
             print(request.POST[f"{i.id}-points"])
             a=Answer.objects.create(user=request.user, ques=i, points=request.POST[f"{i.id}-points"], language=request.POST[f"{i.id}-language"])
             a.save()
+        return redirect('/')
                     
         
     my_ques = Question.objects.all()

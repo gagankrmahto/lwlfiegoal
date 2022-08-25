@@ -6,18 +6,19 @@
 </div>
 <div class="container my-5 py-10">
 
-    
-    <form action="" method='post' class='my-5'>
+    <h3>Enter you today's Language</h3>
+    <p align="right">Logged in as {{user.get_full_name}}</p>
+    <form action="" method='post' class=''>
         {% csrf_token %}
         {% for q in que %}
         <div class="row">
             
-            <label for="formGroupExampleInput" class="form-label">{{q.ans}}{{q.ques}}</label>
+            <label for="formGroupExampleInput" class="form-label mt-3">{{q.ans}}{{q.ques}}</label>
             <div class="col-2">
                 <input type="number" class="form-control" name="{{q.id}}-points" placeholder="points" min="0" max="10">
             </div>
             <div class="col-10">
-                <input type="text" class="form-control" name="{{q.id}}-language" placeholder="Language" aria-label="Language">
+                <input type="text" class="form-control" name="{{q.id}}-language" placeholder="Language -{{q.ques}}" aria-label="Language">
             </div>
         </div>
         {%endfor%}

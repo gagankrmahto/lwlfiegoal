@@ -1,8 +1,12 @@
 {% extends 'lwlife/index.html' %}
 {% block body %}
-
 <div class="container my-4">
-
+    <p align="right">Logged in as 
+        {% if user.is_superuser %}
+        <b> Super Admin</b></p>
+{%else%}
+        <b> {{request.user.get_full_name}} </b></p>
+{%endif%}
     <table class="display" id="ans">
         <thead>
             <tr>
@@ -22,7 +26,7 @@
         <tr>
             <th scope="row">{{forloop.counter}}</th>
             {% if user.is_superuser %}
-            <td>{{answer.user}}</td>
+            <td>{{answer.user.get_full_name}}</td>
             {% endif %}
             <td>{{answer.ques}}</td>
             <td>{{answer.points}}</td>

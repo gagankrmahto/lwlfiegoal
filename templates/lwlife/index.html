@@ -25,14 +25,13 @@
               </li>
 
               <li class="nav-item">
-                <a class="nav-link active"href="{%  url 'create-today' %}">Add({% now "SHORT_DATETIME_FORMAT"%})</a>
+                <a class="nav-link active"href="{%  url 'create-today' %}">Add Today's </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href=""/">All</a>
+                <a class="nav-link" href="/admin">Super Admin</a>
               </li>
-           
-
-        </ul>
+              
+      </ul>
             
 
               <button class="btn btn-outline-success">            {% if request.user.is_authenticated %}
