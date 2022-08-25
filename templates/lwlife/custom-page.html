@@ -6,19 +6,19 @@
 </div>
 <div class="container my-5 py-10">
 
-    <h3>Enter you today's Language</h3> <p>{% now "SHORT_DATETIME_FORMAT" %}</p>
+    <h4>Enter you today's Language - {% now "SHORT_DATETIME_FORMAT" %} </h4> 
     <p align="right">Logged in as {{user.get_full_name}}</p>
     <form action="" method='post' class=''>
         {% csrf_token %}
         {% for q in que %}
         <div class="row">
             
-            <label for="formGroupExampleInput" class="form-label mt-3">{{q.ans}}{{q.ques}}</label>
+            <label for="formGroupExampleInput" class="form-label mt-3"><b>{{q.ques}}</b></label>
             <div class="col-2">
                 <input type="number" class="form-control" name="{{q.id}}-points" placeholder="points" min="0" max="10" required>
             </div>
             <div class="col-10">
-                <input type="text" class="form-control" name="{{q.id}}-language" placeholder="Language that stopped you ?" aria-label="Language" required>
+                <input type="text" class="form-control" name="{{q.id}}-language" placeholder="{{q.description}}" aria-label="Language" required>
             </div>
         </div>
         {%endfor%}
